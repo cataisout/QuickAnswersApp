@@ -3,8 +3,7 @@ import requests
 
 API_URL = "https://api-inference.huggingface.co/models/deepset/roberta-base-squad2"
 
-API_TOKEN ='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'
-headers = {"Authorization": f"Bearer {API_TOKEN}"}
+headers = {"Authorization": f"Bearer {st.secrets['API_TOKEN']}"}
 
 st.set_page_config(page_title="QuickAnswers", layout="centered")
 

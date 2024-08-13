@@ -23,13 +23,16 @@ def query(payload):
 	return response.json()
 
 def execute_query(context, question):
+    
+    output = {"error": 'a'}
 
-    output = query({
-	"inputs": {
-	"question": question,
-	"context": context
-            },
-                })
+    while "error" in list(output.keys()): 
+        output = query({
+        "inputs": {
+        "question": question,
+        "context": context
+                },
+                    })
 
     answer = output['answer']
 
